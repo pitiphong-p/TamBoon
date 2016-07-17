@@ -13,7 +13,34 @@
 		8A76AA6A1D3BF96900B78563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA681D3BF96900B78563 /* Main.storyboard */; };
 		8A76AA6C1D3BF96900B78563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA6B1D3BF96900B78563 /* Assets.xcassets */; };
 		8A76AA6F1D3BF96900B78563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA6D1D3BF96900B78563 /* LaunchScreen.storyboard */; };
+		8A76AA7F1D3BF97200B78563 /* TamBoonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A76AA7D1D3BF97200B78563 /* TamBoonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A76AA821D3BF97200B78563 /* TamBoonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */; };
+		8A76AA831D3BF97200B78563 /* TamBoonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A76AA801D3BF97200B78563 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A76AA571D3BF96900B78563 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A76AA7A1D3BF97100B78563;
+			remoteInfo = TamBoonKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A76AA871D3BF97200B78563 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8A76AA831D3BF97200B78563 /* TamBoonKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8A76AA5F1D3BF96900B78563 /* TamBoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +51,21 @@
 		8A76AA6B1D3BF96900B78563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A76AA6E1D3BF96900B78563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A76AA701D3BF96900B78563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TamBoonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A76AA7D1D3BF97200B78563 /* TamBoonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TamBoonKit.h; sourceTree = "<group>"; };
+		8A76AA7E1D3BF97200B78563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8A76AA5C1D3BF96900B78563 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A76AA821D3BF97200B78563 /* TamBoonKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A76AA771D3BF97100B78563 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				8A76AA611D3BF96900B78563 /* TamBoon */,
+				8A76AA7C1D3BF97200B78563 /* TamBoonKit */,
 				8A76AA601D3BF96900B78563 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				8A76AA5F1D3BF96900B78563 /* TamBoon.app */,
+				8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +107,27 @@
 			path = TamBoon;
 			sourceTree = "<group>";
 		};
+		8A76AA7C1D3BF97200B78563 /* TamBoonKit */ = {
+			isa = PBXGroup;
+			children = (
+				8A76AA7D1D3BF97200B78563 /* TamBoonKit.h */,
+				8A76AA7E1D3BF97200B78563 /* Info.plist */,
+			);
+			path = TamBoonKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8A76AA781D3BF97100B78563 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A76AA7F1D3BF97200B78563 /* TamBoonKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8A76AA5E1D3BF96900B78563 /* TamBoon */ = {
@@ -77,15 +137,35 @@
 				8A76AA5B1D3BF96900B78563 /* Sources */,
 				8A76AA5C1D3BF96900B78563 /* Frameworks */,
 				8A76AA5D1D3BF96900B78563 /* Resources */,
+				8A76AA871D3BF97200B78563 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8A76AA811D3BF97200B78563 /* PBXTargetDependency */,
 			);
 			name = TamBoon;
 			productName = TamBoon;
 			productReference = 8A76AA5F1D3BF96900B78563 /* TamBoon.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8A76AA7A1D3BF97100B78563 /* TamBoonKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A76AA841D3BF97200B78563 /* Build configuration list for PBXNativeTarget "TamBoonKit" */;
+			buildPhases = (
+				8A76AA761D3BF97100B78563 /* Sources */,
+				8A76AA771D3BF97100B78563 /* Frameworks */,
+				8A76AA781D3BF97100B78563 /* Headers */,
+				8A76AA791D3BF97100B78563 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TamBoonKit;
+			productName = TamBoonKit;
+			productReference = 8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +178,10 @@
 				ORGANIZATIONNAME = "Pitiphong Phongpattranont";
 				TargetAttributes = {
 					8A76AA5E1D3BF96900B78563 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					8A76AA7A1D3BF97100B78563 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -117,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				8A76AA5E1D3BF96900B78563 /* TamBoon */,
+				8A76AA7A1D3BF97100B78563 /* TamBoonKit */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +214,13 @@
 				8A76AA6F1D3BF96900B78563 /* LaunchScreen.storyboard in Resources */,
 				8A76AA6C1D3BF96900B78563 /* Assets.xcassets in Resources */,
 				8A76AA6A1D3BF96900B78563 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A76AA791D3BF97100B78563 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +237,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A76AA761D3BF97100B78563 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A76AA811D3BF97200B78563 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A76AA7A1D3BF97100B78563 /* TamBoonKit */;
+			targetProxy = 8A76AA801D3BF97200B78563 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8A76AA681D3BF96900B78563 /* Main.storyboard */ = {
@@ -278,6 +385,48 @@
 			};
 			name = Release;
 		};
+		8A76AA851D3BF97200B78563 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TamBoonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.pitiphong.TamBoonKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8A76AA861D3BF97200B78563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TamBoonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.pitiphong.TamBoonKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -295,6 +444,14 @@
 			buildConfigurations = (
 				8A76AA741D3BF96900B78563 /* Debug */,
 				8A76AA751D3BF96900B78563 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8A76AA841D3BF97200B78563 /* Build configuration list for PBXNativeTarget "TamBoonKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A76AA851D3BF97200B78563 /* Debug */,
+				8A76AA861D3BF97200B78563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
