@@ -16,6 +16,8 @@
 		8A76AA7F1D3BF97200B78563 /* TamBoonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A76AA7D1D3BF97200B78563 /* TamBoonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A76AA821D3BF97200B78563 /* TamBoonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */; };
 		8A76AA831D3BF97200B78563 /* TamBoonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A76AA891D3BFA9100B78563 /* Charity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA881D3BFA9100B78563 /* Charity.swift */; };
+		8A76AA8B1D3BFB0700B78563 /* TamBoonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA8A1D3BFB0700B78563 /* TamBoonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TamBoonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A76AA7D1D3BF97200B78563 /* TamBoonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TamBoonKit.h; sourceTree = "<group>"; };
 		8A76AA7E1D3BF97200B78563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A76AA881D3BFA9100B78563 /* Charity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charity.swift; sourceTree = "<group>"; };
+		8A76AA8A1D3BFB0700B78563 /* TamBoonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TamBoonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 			children = (
 				8A76AA7D1D3BF97200B78563 /* TamBoonKit.h */,
 				8A76AA7E1D3BF97200B78563 /* Info.plist */,
+				8A76AA881D3BFA9100B78563 /* Charity.swift */,
+				8A76AA8A1D3BFB0700B78563 /* TamBoonAPI.swift */,
 			);
 			path = TamBoonKit;
 			sourceTree = "<group>";
@@ -179,10 +185,13 @@
 				TargetAttributes = {
 					8A76AA5E1D3BF96900B78563 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RVKKD6N7VZ;
+						DevelopmentTeamName = "Pitiphong Phongpattranont (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 					8A76AA7A1D3BF97100B78563 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -241,6 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A76AA891D3BFA9100B78563 /* Charity.swift in Sources */,
+				8A76AA8B1D3BFB0700B78563 /* TamBoonAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +375,9 @@
 		8A76AA741D3BF96900B78563 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TamBoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.pitiphong.TamBoon;
@@ -376,7 +389,9 @@
 		8A76AA751D3BF96900B78563 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TamBoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.pitiphong.TamBoon;
@@ -388,6 +403,7 @@
 		8A76AA851D3BF97200B78563 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -399,6 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.pitiphong.TamBoonKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -409,6 +426,7 @@
 		8A76AA861D3BF97200B78563 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
