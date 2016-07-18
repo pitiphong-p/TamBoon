@@ -25,6 +25,10 @@
 		8AA61E921D3D373B007EEFA1 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA61E871D3D3725007EEFA1 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8AA61E941D3D480E007EEFA1 /* DonationSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61E931D3D480E007EEFA1 /* DonationSplashViewController.swift */; };
 		8AA61E961D3D5063007EEFA1 /* AboutTamBoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61E951D3D5063007EEFA1 /* AboutTamBoonViewController.swift */; };
+		8AA61EAD1D3D546D007EEFA1 /* MBProgressHUD in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61EAA1D3D546D007EEFA1 /* MBProgressHUD */; };
+		8AA61EAE1D3D546D007EEFA1 /* Omise in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61EAB1D3D546D007EEFA1 /* Omise */; };
+		8AA61EAF1D3D546D007EEFA1 /* SDWebImage in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61EAC1D3D546D007EEFA1 /* SDWebImage */; };
+		8AA61EB11D3D56EE007EEFA1 /* LicenseViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61EB01D3D56EE007EEFA1 /* LicenseViewerViewController.swift */; };
 		8AA99A301D3CD8E000C00F69 /* CharityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +168,10 @@
 		8AA61E7F1D3D3725007EEFA1 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Library/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		8AA61E931D3D480E007EEFA1 /* DonationSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationSplashViewController.swift; sourceTree = "<group>"; };
 		8AA61E951D3D5063007EEFA1 /* AboutTamBoonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTamBoonViewController.swift; sourceTree = "<group>"; };
+		8AA61EAA1D3D546D007EEFA1 /* MBProgressHUD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MBProgressHUD; sourceTree = "<group>"; };
+		8AA61EAB1D3D546D007EEFA1 /* Omise */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Omise; sourceTree = "<group>"; };
+		8AA61EAC1D3D546D007EEFA1 /* SDWebImage */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SDWebImage; sourceTree = "<group>"; };
+		8AA61EB01D3D56EE007EEFA1 /* LicenseViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewerViewController.swift; sourceTree = "<group>"; };
 		8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharityListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,9 +225,7 @@
 				8A76AA611D3BF96900B78563 /* TamBoon */,
 				8A76AA7C1D3BF97200B78563 /* TamBoonKit */,
 				8A76AA601D3BF96900B78563 /* Products */,
-				8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */,
-				8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */,
-				8AA61E7F1D3D3725007EEFA1 /* MBProgressHUD.xcodeproj */,
+				8AA61E971D3D52C9007EEFA1 /* Library */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +246,7 @@
 				8A0E032D1D3CF21A00CE165C /* DonatingViewController.swift */,
 				8AA61E931D3D480E007EEFA1 /* DonationSplashViewController.swift */,
 				8AA61E951D3D5063007EEFA1 /* AboutTamBoonViewController.swift */,
+				8AA61EB01D3D56EE007EEFA1 /* LicenseViewerViewController.swift */,
 				8A76AA681D3BF96900B78563 /* Main.storyboard */,
 				8A76AA6B1D3BF96900B78563 /* Assets.xcassets */,
 				8A76AA6D1D3BF96900B78563 /* LaunchScreen.storyboard */,
@@ -266,6 +273,28 @@
 				8AA61E871D3D3725007EEFA1 /* MBProgressHUD.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8AA61E971D3D52C9007EEFA1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8AA61EA91D3D5421007EEFA1 /* License */,
+				8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */,
+				8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */,
+				8AA61E7F1D3D3725007EEFA1 /* MBProgressHUD.xcodeproj */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		8AA61EA91D3D5421007EEFA1 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				8AA61EAA1D3D546D007EEFA1 /* MBProgressHUD */,
+				8AA61EAB1D3D546D007EEFA1 /* Omise */,
+				8AA61EAC1D3D546D007EEFA1 /* SDWebImage */,
+			);
+			name = License;
+			path = Library/License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,8 +485,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA61EAF1D3D546D007EEFA1 /* SDWebImage in Resources */,
 				8A76AA6F1D3BF96900B78563 /* LaunchScreen.storyboard in Resources */,
+				8AA61EAE1D3D546D007EEFA1 /* Omise in Resources */,
 				8A76AA6C1D3BF96900B78563 /* Assets.xcassets in Resources */,
+				8AA61EAD1D3D546D007EEFA1 /* MBProgressHUD in Resources */,
 				8A76AA6A1D3BF96900B78563 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA61EB11D3D56EE007EEFA1 /* LicenseViewerViewController.swift in Sources */,
 				8A0E032E1D3CF21A00CE165C /* DonatingViewController.swift in Sources */,
 				8AA99A301D3CD8E000C00F69 /* CharityListTableViewController.swift in Sources */,
 				8A76AA631D3BF96900B78563 /* AppDelegate.swift in Sources */,
