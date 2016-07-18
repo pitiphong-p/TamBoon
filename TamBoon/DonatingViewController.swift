@@ -9,6 +9,7 @@
 import UIKit
 import OmiseSDK
 import TamBoonKit
+import MBProgressHUD
 
 
 class DonatingViewController: UIViewController {
@@ -79,9 +80,24 @@ class DonatingViewController: UIViewController {
 extension DonatingViewController: CreditCardFormDelegate {
   func creditCardForm(controller: CreditCardFormController, didSucceedWithToken token: OmiseToken) {
     guard let tamBoonAPI = tamBoonAPI, charity = charity, tokenID = token.tokenId else { return }
-    
-    tamBoonAPI.donateToCharity(charity, withDonatorName: "", payment: PaymentInformation(token: tokenID, amount: donatingAmount), completion: { (donatingError) in
-      self.dismissViewControllerAnimated(true, completion: nil)
+
+    dismissViewControllerAnimated(true, completion: { success in
+      let window: UIView = self.view.window ?? self.view
+      
+      let submitDonationProgressView = MBProgressHUD(view: window)
+      submitDonationProgressView.mode = .Indeterminate
+      submitDonationProgressView.animationType = .Zoom
+      submitDonationProgressView.removeFromSuperViewOnHide = true
+      submitDonationProgressView.label.text = "Donating..."
+      submitDonationProgressView.backgroundView.style = MBProgressHUDBackgroundStyle.SolidColor
+      submitDonationProgressView.backgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
+      
+      window.addSubview(submitDonationProgressView)
+      submitDonationProgressView.showAnimated(true)
+      
+      tamBoonAPI.donateToCharity(charity, withDonatorName: token.card?.name ?? "", payment: PaymentInformation(token: tokenID, amount: self.donatingAmount), completion: { (donatingError) in
+        submitDonationProgressView.hideAnimated(true)
+      })
     })
   }
   
