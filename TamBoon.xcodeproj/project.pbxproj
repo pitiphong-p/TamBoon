@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A76AA631D3BF96900B78563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA621D3BF96900B78563 /* AppDelegate.swift */; };
-		8A76AA651D3BF96900B78563 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA641D3BF96900B78563 /* MasterViewController.swift */; };
-		8A76AA671D3BF96900B78563 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA661D3BF96900B78563 /* DetailViewController.swift */; };
 		8A76AA6A1D3BF96900B78563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA681D3BF96900B78563 /* Main.storyboard */; };
 		8A76AA6C1D3BF96900B78563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA6B1D3BF96900B78563 /* Assets.xcassets */; };
 		8A76AA6F1D3BF96900B78563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA6D1D3BF96900B78563 /* LaunchScreen.storyboard */; };
@@ -18,6 +16,7 @@
 		8A76AA831D3BF97200B78563 /* TamBoonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A76AA7B1D3BF97100B78563 /* TamBoonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A76AA891D3BFA9100B78563 /* Charity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA881D3BFA9100B78563 /* Charity.swift */; };
 		8A76AA8B1D3BFB0700B78563 /* TamBoonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA8A1D3BFB0700B78563 /* TamBoonAPI.swift */; };
+		8AA99A301D3CD8E000C00F69 /* CharityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +68,6 @@
 		8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OmiseSDK.xcodeproj; path = Library/Omise/OmiseSDK.xcodeproj; sourceTree = "<group>"; };
 		8A76AA5F1D3BF96900B78563 /* TamBoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A76AA621D3BF96900B78563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A76AA641D3BF96900B78563 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		8A76AA661D3BF96900B78563 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8A76AA691D3BF96900B78563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A76AA6B1D3BF96900B78563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A76AA6E1D3BF96900B78563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +77,7 @@
 		8A76AA7E1D3BF97200B78563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A76AA881D3BFA9100B78563 /* Charity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charity.swift; sourceTree = "<group>"; };
 		8A76AA8A1D3BFB0700B78563 /* TamBoonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TamBoonAPI.swift; sourceTree = "<group>"; };
+		8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharityListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				8A76AA621D3BF96900B78563 /* AppDelegate.swift */,
-				8A76AA641D3BF96900B78563 /* MasterViewController.swift */,
-				8A76AA661D3BF96900B78563 /* DetailViewController.swift */,
+				8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */,
 				8A76AA681D3BF96900B78563 /* Main.storyboard */,
 				8A76AA6B1D3BF96900B78563 /* Assets.xcassets */,
 				8A76AA6D1D3BF96900B78563 /* LaunchScreen.storyboard */,
@@ -303,8 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A76AA671D3BF96900B78563 /* DetailViewController.swift in Sources */,
-				8A76AA651D3BF96900B78563 /* MasterViewController.swift in Sources */,
+				8AA99A301D3CD8E000C00F69 /* CharityListTableViewController.swift in Sources */,
 				8A76AA631D3BF96900B78563 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
