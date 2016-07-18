@@ -14,12 +14,18 @@ public struct PaymentInformation {
   public let token: String
   /// An amount of donation in THB.
   public let amount: Int
+  
+  /// An initializer for the PaymentInformation
+  public init(token: String, amount: Int) {
+    self.token = token
+    self.amount = amount
+  }
 }
 
 /// The error information returned from TamBoon server
 public enum TamBoonAPIError: ErrorType {
-  /// An HTTP status error returned from the server
-  case HTTPError(Int)
+  /// An HTTP status error and error message (if given) returned from the server
+  case HTTPError(Int, message: String?)
   /// An Foundation error returned from the iOS
   case FoundationError(NSError)
   /// An error indicated that server has returned an invalid or unknowned response data.
@@ -65,7 +71,7 @@ public class TamBoonAPI: NSObject {
         return
       }
       if let response = response as? NSHTTPURLResponse where !(200..<400 ~= response.statusCode) {
-        loadCharitiesError = .HTTPError(response.statusCode)
+        loadCharitiesError = .HTTPError(response.statusCode, message: returnedData.flatMap({ String(data: $0, encoding: NSUTF8StringEncoding) }))
         charities = nil
         return
       }
@@ -108,7 +114,7 @@ public class TamBoonAPI: NSObject {
                               payment: PaymentInformation,
                               completionQueue: dispatch_queue_t = dispatch_get_main_queue(),
                               completion: (TamBoonAPIError?) -> Void) -> Void {
-    let donateURL = host.URLByAppendingPathComponent("donate").URLByAppendingPathComponent(String(charity.id))
+    let donateURL = host.URLByAppendingPathComponent("donate")
     let donatingRequest = NSMutableURLRequest(URL: donateURL, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
     donatingRequest.HTTPMethod = "POST"
     
@@ -133,8 +139,8 @@ public class TamBoonAPI: NSObject {
         donationError = .FoundationError(error)
         return
       }
-      if let response = response as? NSHTTPURLResponse where !(200..<400 ~= response.statusCode) {
-        donationError = .HTTPError(response.statusCode)
+      if let response = response as? NSHTTPURLResponse where !(200..<300 ~= response.statusCode) {
+        donationError = .HTTPError(response.statusCode, message: returnedData.flatMap({ String(data: $0, encoding: NSUTF8StringEncoding) }))
         return
       }
       
