@@ -17,9 +17,14 @@ class DonationSplashViewController: UIViewController {
   var donatedCharity: Charity? {
     didSet {
       if isViewLoaded() {
-        
+        updateThankyouMessage()
       }
     }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    updateThankyouMessage()
   }
   
   private func updateThankyouMessage() {
@@ -27,7 +32,8 @@ class DonationSplashViewController: UIViewController {
       return
     }
     
-    thankyouLabel.text = "You have successfully donated to \(donatedCharity.name) Charity. Thank you."
+    let thankyouMessageFormat = NSLocalizedString("thankyou-splash.thankyou.message", value: "You have successfully donated to %@ Charity. Thank you.", comment: "A thank you message display to user when user made a successfully donation")
+    thankyouLabel.text = String.localizedStringWithFormat(thankyouMessageFormat, donatedCharity.name)
   }
   
 }

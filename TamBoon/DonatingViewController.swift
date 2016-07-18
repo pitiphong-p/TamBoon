@@ -81,7 +81,7 @@ extension DonatingViewController: CreditCardFormDelegate {
     submitDonationProgressView.mode = .Indeterminate
     submitDonationProgressView.animationType = .Zoom
     submitDonationProgressView.removeFromSuperViewOnHide = true
-    submitDonationProgressView.label.text = "Donating..."
+    submitDonationProgressView.label.text = NSLocalizedString("donation.donating-inprogress", value: "Donating...", comment: "Title for donation is in progress splash scene") 
     submitDonationProgressView.backgroundView.style = MBProgressHUDBackgroundStyle.SolidColor
     submitDonationProgressView.backgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
     
