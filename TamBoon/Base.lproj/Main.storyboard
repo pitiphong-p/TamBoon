@@ -78,10 +78,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="XSq-wM-aEf">
                                 <rect key="frame" x="180" y="84" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="JNp-gt-XGi"/>
-                                    <constraint firstAttribute="height" constant="128" id="xSP-KB-FT7"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLI-Uk-ImA">
                                 <rect key="frame" x="279" y="220" width="42" height="21"/>
@@ -118,7 +114,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="deE-DD-MGH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sz5-g1-izN"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sz5-g1-izN">
+                            <connections>
+                                <segue destination="PZB-Ik-Qaq" kind="unwind" unwindAction="cancelDonation:" id="EgG-IB-G9c"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ejL-gz-zFd">
                             <connections>
                                 <action selector="proceedNextStep:" destination="cSk-3r-Kvi" id="Ex1-53-oRf"/>
@@ -126,19 +126,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelCardInputFormButton" destination="9Po-h8-1s6" id="Yr3-vT-UvI"/>
                         <outlet property="charityLogoImageView" destination="XSq-wM-aEf" id="ejs-zb-BhN"/>
                         <outlet property="charityNameLabel" destination="OLI-Uk-ImA" id="xN4-X2-i2V"/>
                         <outlet property="donateAmountTextField" destination="SPI-Fj-hVH" id="Q5y-f5-mPR"/>
                         <outlet property="nextStepBarButtonItem" destination="ejL-gz-zFd" id="K16-W1-BSq"/>
+                        <segue destination="QC0-de-vAa" kind="presentation" identifier="ShowSuccessfulSplash" id="kkH-GW-und"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBX-N3-iT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem systemItem="cancel" id="9Po-h8-1s6">
-                    <connections>
-                        <action selector="cancelCardInputForm:" destination="cSk-3r-Kvi" id="hjV-J1-3md"/>
-                    </connections>
-                </barButtonItem>
+                <exit id="PZB-Ik-Qaq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3680" y="600"/>
         </scene>
@@ -177,6 +173,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8k-fi-mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2868" y="600"/>
+        </scene>
+        <!--Donation Splash View Controller-->
+        <scene sceneID="04A-2c-BnP">
+            <objects>
+                <viewController id="QC0-de-vAa" customClass="DonationSplashViewController" customModule="TamBoon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ymv-OP-sSn"/>
+                        <viewControllerLayoutGuide type="bottom" id="IxC-E6-0bi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xQc-KI-uJH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-Sb-x4c">
+                                <rect key="frame" x="281" y="317" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="qgD-aI-cLv" kind="unwind" unwindAction="donationFinished:" id="rP5-Dz-jfa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you. You have successfully donated to Charity." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxn-LM-wXg">
+                                <rect key="frame" x="98" y="290" width="403" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7d0-Sb-x4c" firstAttribute="centerX" secondItem="yxn-LM-wXg" secondAttribute="centerX" id="5zf-ef-sqP"/>
+                            <constraint firstItem="yxn-LM-wXg" firstAttribute="centerY" secondItem="xQc-KI-uJH" secondAttribute="centerY" id="NvO-kh-dbt"/>
+                            <constraint firstItem="yxn-LM-wXg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xQc-KI-uJH" secondAttribute="leadingMargin" id="YS6-Qc-uVs"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="yxn-LM-wXg" secondAttribute="trailing" id="hCt-uo-EG7"/>
+                            <constraint firstItem="7d0-Sb-x4c" firstAttribute="top" secondItem="yxn-LM-wXg" secondAttribute="bottom" constant="8" id="sBU-2f-KBN"/>
+                            <constraint firstItem="yxn-LM-wXg" firstAttribute="centerX" secondItem="xQc-KI-uJH" secondAttribute="centerX" id="ueQ-zA-SVC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="thankyouLabel" destination="yxn-LM-wXg" id="0Vw-8x-7G6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ud8-VX-aFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qgD-aI-cLv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3225" y="1340"/>
         </scene>
     </scenes>
 </document>

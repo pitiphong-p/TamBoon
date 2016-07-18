@@ -23,6 +23,7 @@
 		8A76AA8B1D3BFB0700B78563 /* TamBoonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA8A1D3BFB0700B78563 /* TamBoonAPI.swift */; };
 		8AA61E911D3D3734007EEFA1 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA61E871D3D3725007EEFA1 /* MBProgressHUD.framework */; };
 		8AA61E921D3D373B007EEFA1 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA61E871D3D3725007EEFA1 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8AA61E941D3D480E007EEFA1 /* DonationSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61E931D3D480E007EEFA1 /* DonationSplashViewController.swift */; };
 		8AA99A301D3CD8E000C00F69 /* CharityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,7 @@
 		8A76AA881D3BFA9100B78563 /* Charity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charity.swift; sourceTree = "<group>"; };
 		8A76AA8A1D3BFB0700B78563 /* TamBoonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TamBoonAPI.swift; sourceTree = "<group>"; };
 		8AA61E7F1D3D3725007EEFA1 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = Library/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
+		8AA61E931D3D480E007EEFA1 /* DonationSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationSplashViewController.swift; sourceTree = "<group>"; };
 		8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharityListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +236,7 @@
 				8A76AA621D3BF96900B78563 /* AppDelegate.swift */,
 				8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */,
 				8A0E032D1D3CF21A00CE165C /* DonatingViewController.swift */,
+				8AA61E931D3D480E007EEFA1 /* DonationSplashViewController.swift */,
 				8A76AA681D3BF96900B78563 /* Main.storyboard */,
 				8A76AA6B1D3BF96900B78563 /* Assets.xcassets */,
 				8A76AA6D1D3BF96900B78563 /* LaunchScreen.storyboard */,
@@ -473,6 +476,7 @@
 				8A0E032E1D3CF21A00CE165C /* DonatingViewController.swift in Sources */,
 				8AA99A301D3CD8E000C00F69 /* CharityListTableViewController.swift in Sources */,
 				8A76AA631D3BF96900B78563 /* AppDelegate.swift in Sources */,
+				8AA61E941D3D480E007EEFA1 /* DonationSplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,6 +73,10 @@ class CharityListTableViewController: UITableViewController {
     return cell
   }
   
+  
+  @IBAction func cancelDonation(sender: UIStoryboardSegue) {}
+  @IBAction func donationFinished(sender: UIStoryboardSegue) {}
+  
 }
 
 

@@ -26,7 +26,6 @@ class DonatingViewController: UIViewController {
   @IBOutlet weak var donateAmountTextField: UITextField!
  
   @IBOutlet weak var nextStepBarButtonItem: UIBarButtonItem!
-  @IBOutlet var cancelCardInputFormButton: UIBarButtonItem!
   
   var donatingAmount: Int = 0
   var isDonationValid: Bool {
@@ -43,6 +42,12 @@ class DonatingViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ShowSuccessfulSplash", let splashViewController = segue.destinationViewController as? DonationSplashViewController {
+      splashViewController.donatedCharity = charity
+    }
+  }
+  
   private func updateCharityUI() {
     guard isViewLoaded() else { return }
     
@@ -56,11 +61,7 @@ class DonatingViewController: UIViewController {
     let cardInputFormController = CreditCardFormController(publicKey: "pkey_test_54oojsyhv5uq1kzf4g4")
     cardInputFormController.delegate = self
     cardInputFormController.handleErrors = true
-    cardInputFormController.navigationItem.leftBarButtonItem = cancelCardInputFormButton
-    
-    let cardInputFormWithNavigationController = UINavigationController(rootViewController: cardInputFormController)
-    
-    presentViewController(cardInputFormWithNavigationController, animated: true, completion: nil)
+    showViewController(cardInputFormController, sender: self)
   }
   
   @IBAction func donateAmountDidChanged(sender: UITextField) {
@@ -68,36 +69,32 @@ class DonatingViewController: UIViewController {
     
     self.donatingAmount = amount
   }
-  
-  @IBAction func cancelCardInputForm(sender: UIBarButtonItem) {
-    if let presentedViewController = presentedViewController as? UINavigationController
-      where presentedViewController.topViewController is CreditCardFormController  {
-      dismissViewControllerAnimated(true, completion: nil)
-    }
-  }
 }
 
 extension DonatingViewController: CreditCardFormDelegate {
   func creditCardForm(controller: CreditCardFormController, didSucceedWithToken token: OmiseToken) {
     guard let tamBoonAPI = tamBoonAPI, charity = charity, tokenID = token.tokenId else { return }
-
-    dismissViewControllerAnimated(true, completion: { success in
-      let window: UIView = self.view.window ?? self.view
-      
-      let submitDonationProgressView = MBProgressHUD(view: window)
-      submitDonationProgressView.mode = .Indeterminate
-      submitDonationProgressView.animationType = .Zoom
-      submitDonationProgressView.removeFromSuperViewOnHide = true
-      submitDonationProgressView.label.text = "Donating..."
-      submitDonationProgressView.backgroundView.style = MBProgressHUDBackgroundStyle.SolidColor
-      submitDonationProgressView.backgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
-      
-      window.addSubview(submitDonationProgressView)
-      submitDonationProgressView.showAnimated(true)
-      
-      tamBoonAPI.donateToCharity(charity, withDonatorName: token.card?.name ?? "", payment: PaymentInformation(token: tokenID, amount: self.donatingAmount), completion: { (donatingError) in
-        submitDonationProgressView.hideAnimated(true)
-      })
+    
+    let window: UIView = controller.view.window ?? controller.view
+    
+    let submitDonationProgressView = MBProgressHUD(view: window)
+    submitDonationProgressView.mode = .Indeterminate
+    submitDonationProgressView.animationType = .Zoom
+    submitDonationProgressView.removeFromSuperViewOnHide = true
+    submitDonationProgressView.label.text = "Donating..."
+    submitDonationProgressView.backgroundView.style = MBProgressHUDBackgroundStyle.SolidColor
+    submitDonationProgressView.backgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
+    
+    window.addSubview(submitDonationProgressView)
+    submitDonationProgressView.showAnimated(true)
+    
+    tamBoonAPI.donateToCharity(charity, withDonatorName: token.card?.name ?? "", payment: PaymentInformation(token: tokenID, amount: self.donatingAmount), completion: { (donatingError) in
+      submitDonationProgressView.hideAnimated(true)
+      if let error = donatingError {
+        print(error)
+      } else {
+        self.performSegueWithIdentifier("ShowSuccessfulSplash", sender: self)
+      }
     })
   }
   
