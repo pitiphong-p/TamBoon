@@ -11,7 +11,7 @@ import Foundation
 public struct Charity {
   public let id: Int
   public let name: String
-  public let logoURL: URL?
+  public let logoURL: NSURL?
 }
 
 extension Charity {
@@ -23,6 +23,6 @@ extension Charity {
     let logoURLString = apiData["logo_url"] as? String
     self.id = id
     self.name = name
-    self.logoURL = logoURLString.flatMap(URL.init(string:))
+    self.logoURL = logoURLString.flatMap(NSURL.init(string:))
   }
 }

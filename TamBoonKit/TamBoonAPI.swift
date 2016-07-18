@@ -9,30 +9,30 @@
 import Foundation
 
 
-public enum TamBoonAPIError: ErrorProtocol {
+public enum TamBoonAPIError: ErrorType {
   case HTTPError(Int)
   case foundationError(NSError)
   case invalidResponse
 }
 
 public class TamBoonAPI: NSObject {
-  public let hostname: URL
-  private var session: URLSession!
-  private let processingQueue: OperationQueue = OperationQueue()
+  public let hostname: NSURL
+  private var session: NSURLSession!
+  private let processingQueue: NSOperationQueue = NSOperationQueue()
   
-  public init(hostname: URL) {
+  public init(hostname: NSURL) {
     self.hostname = hostname
     super.init()
-    session = URLSession(configuration: URLSessionConfiguration.default)
+    session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
   }
   
   public func listAllCharities(completion: ([Charity]?, TamBoonAPIError?) -> Void) {
-    let loadCharitiesTask = session.dataTask(with: hostname) { (returnedData, response, error) in
+    let loadCharitiesTask = session.dataTaskWithURL(hostname, completionHandler: { (returnedData, response, error) in
       if let error = error {
         completion(nil, .foundationError(error))
         return
       }
-      if let response = response as? HTTPURLResponse where !(200..<400 ~= response.statusCode) {
+      if let response = response as? NSHTTPURLResponse where !(200..<400 ~= response.statusCode) {
         completion(nil, .HTTPError(response.statusCode))
       }
       
@@ -43,7 +43,7 @@ public class TamBoonAPI: NSObject {
       
       let json: [[String: AnyObject]]
       do {
-        if let parsedJSON = try JSONSerialization.jsonObject(with: data) as? [[String: AnyObject]] {
+        if let parsedJSON = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [[String: AnyObject]] {
           json = parsedJSON
         } else {
           throw TamBoonAPIError.invalidResponse
@@ -55,13 +55,13 @@ public class TamBoonAPI: NSObject {
       
       let charities = json.flatMap(Charity.init)
       completion(charities, nil)
-    }
+    })
     loadCharitiesTask.resume()
   }
 }
 
 
-extension TamBoonAPI: URLSessionDelegate {
+extension TamBoonAPI: NSURLSessionDelegate {
   
 }
 

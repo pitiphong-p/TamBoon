@@ -21,6 +21,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8A0FCED71D3CA67F00481328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 225931181CE3210700841B86;
+			remoteInfo = OmiseSDK;
+		};
+		8A0FCED91D3CA67F00481328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 987A02C91CE35D5E0035417A;
+			remoteInfo = OmiseSDKTests;
+		};
+		8A0FCEDB1D3CA67F00481328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22D4809D1D0EB29C00544CE1;
+			remoteInfo = ExampleApp;
+		};
 		8A76AA801D3BF97200B78563 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8A76AA571D3BF96900B78563 /* Project object */;
@@ -45,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OmiseSDK.xcodeproj; path = Library/Omise/OmiseSDK.xcodeproj; sourceTree = "<group>"; };
 		8A76AA5F1D3BF96900B78563 /* TamBoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A76AA621D3BF96900B78563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A76AA641D3BF96900B78563 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -79,12 +101,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A0FCED21D3CA67F00481328 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A0FCED81D3CA67F00481328 /* OmiseSDK.framework */,
+				8A0FCEDA1D3CA67F00481328 /* OmiseSDKTests.xctest */,
+				8A0FCEDC1D3CA67F00481328 /* ExampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8A76AA561D3BF96900B78563 = {
 			isa = PBXGroup;
 			children = (
 				8A76AA611D3BF96900B78563 /* TamBoon */,
 				8A76AA7C1D3BF97200B78563 /* TamBoonKit */,
 				8A76AA601D3BF96900B78563 /* Products */,
+				8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +240,12 @@
 			mainGroup = 8A76AA561D3BF96900B78563;
 			productRefGroup = 8A76AA601D3BF96900B78563 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A0FCED21D3CA67F00481328 /* Products */;
+					ProjectRef = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8A76AA5E1D3BF96900B78563 /* TamBoon */,
@@ -214,6 +253,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8A0FCED81D3CA67F00481328 /* OmiseSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OmiseSDK.framework;
+			remoteRef = 8A0FCED71D3CA67F00481328 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A0FCEDA1D3CA67F00481328 /* OmiseSDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OmiseSDKTests.xctest;
+			remoteRef = 8A0FCED91D3CA67F00481328 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A0FCEDC1D3CA67F00481328 /* ExampleApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ExampleApp.app;
+			remoteRef = 8A0FCEDB1D3CA67F00481328 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8A76AA5D1D3BF96900B78563 /* Resources */ = {
@@ -323,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -364,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -464,6 +527,7 @@
 				8A76AA751D3BF96900B78563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A76AA841D3BF97200B78563 /* Build configuration list for PBXNativeTarget "TamBoonKit" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +536,7 @@
 				8A76AA861D3BF97200B78563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
