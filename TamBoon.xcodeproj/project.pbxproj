@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8A0E03271D3CEE4200CE165C /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0E031D1D3CEA3400CE165C /* WebImage.framework */; };
 		8A0E032A1D3CEE5600CE165C /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0E031D1D3CEA3400CE165C /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A0E032E1D3CF21A00CE165C /* DonatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E032D1D3CF21A00CE165C /* DonatingViewController.swift */; };
+		8A0E03311D3CF34C00CE165C /* OmiseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0FCED81D3CA67F00481328 /* OmiseSDK.framework */; };
+		8A0E03321D3CF35100CE165C /* OmiseSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0FCED81D3CA67F00481328 /* OmiseSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A76AA631D3BF96900B78563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA621D3BF96900B78563 /* AppDelegate.swift */; };
 		8A76AA6A1D3BF96900B78563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA681D3BF96900B78563 /* Main.storyboard */; };
 		8A76AA6C1D3BF96900B78563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA6B1D3BF96900B78563 /* Assets.xcassets */; };
@@ -64,6 +67,13 @@
 			remoteGlobalIDString = 4A2CADFE1AB4BB5300B6BC39;
 			remoteInfo = WebImage;
 		};
+		8A0E032F1D3CF34500CE165C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 225931171CE3210700841B86;
+			remoteInfo = OmiseSDK;
+		};
 		8A0FCED71D3CA67F00481328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
@@ -101,6 +111,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8A0E03321D3CF35100CE165C /* OmiseSDK.framework in Embed Frameworks */,
 				8A0E032A1D3CEE5600CE165C /* WebImage.framework in Embed Frameworks */,
 				8A76AA831D3BF97200B78563 /* TamBoonKit.framework in Embed Frameworks */,
 			);
@@ -111,6 +122,7 @@
 
 /* Begin PBXFileReference section */
 		8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = Library/SDWebImage/SDWebImage.xcodeproj; sourceTree = "<group>"; };
+		8A0E032D1D3CF21A00CE165C /* DonatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonatingViewController.swift; sourceTree = "<group>"; };
 		8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OmiseSDK.xcodeproj; path = Library/Omise/OmiseSDK.xcodeproj; sourceTree = "<group>"; };
 		8A76AA5F1D3BF96900B78563 /* TamBoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A76AA621D3BF96900B78563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0E03311D3CF34C00CE165C /* OmiseSDK.framework in Frameworks */,
 				8A0E03271D3CEE4200CE165C /* WebImage.framework in Frameworks */,
 				8A76AA821D3BF97200B78563 /* TamBoonKit.framework in Frameworks */,
 			);
@@ -193,6 +206,7 @@
 			children = (
 				8A76AA621D3BF96900B78563 /* AppDelegate.swift */,
 				8AA99A2F1D3CD8E000C00F69 /* CharityListTableViewController.swift */,
+				8A0E032D1D3CF21A00CE165C /* DonatingViewController.swift */,
 				8A76AA681D3BF96900B78563 /* Main.storyboard */,
 				8A76AA6B1D3BF96900B78563 /* Assets.xcassets */,
 				8A76AA6D1D3BF96900B78563 /* LaunchScreen.storyboard */,
@@ -238,6 +252,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8A0E03301D3CF34500CE165C /* PBXTargetDependency */,
 				8A0E03291D3CEE5000CE165C /* PBXTargetDependency */,
 				8A76AA811D3BF97200B78563 /* PBXTargetDependency */,
 			);
@@ -400,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0E032E1D3CF21A00CE165C /* DonatingViewController.swift in Sources */,
 				8AA99A301D3CD8E000C00F69 /* CharityListTableViewController.swift in Sources */,
 				8A76AA631D3BF96900B78563 /* AppDelegate.swift in Sources */,
 			);
@@ -421,6 +437,11 @@
 			isa = PBXTargetDependency;
 			name = WebImage;
 			targetProxy = 8A0E03281D3CEE5000CE165C /* PBXContainerItemProxy */;
+		};
+		8A0E03301D3CF34500CE165C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OmiseSDK;
+			targetProxy = 8A0E032F1D3CF34500CE165C /* PBXContainerItemProxy */;
 		};
 		8A76AA811D3BF97200B78563 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
