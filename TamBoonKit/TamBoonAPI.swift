@@ -43,24 +43,36 @@ public class TamBoonAPI: NSObject {
     session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
   }
   
-  
+
   /**
    List all of the available charities that are able to be donated to.
+   - parameter completionQueue:  A dispatch queue that the completion callback will be dispatched on. Default queue is `main` queue.
    - parameter completion: A completion callback closure with 2 parameters, the returned charities list or an error that occured.
    */
-  public func listAllCharitiesWithCompletion(completion: ([Charity]?, TamBoonAPIError?) -> Void) {
+  public func listAllCharitiesWith(completionQueue: dispatch_queue_t = dispatch_get_main_queue(), completion: ([Charity]?, TamBoonAPIError?) -> Void) {
     let loadCharitiesTask = session.dataTaskWithURL(host, completionHandler: { (returnedData, response, error) in
+      let loadCharitiesError: TamBoonAPIError?
+      let charities: [Charity]?
+      defer {
+        dispatch_async(completionQueue, { 
+          completion(charities, loadCharitiesError)
+        })
+      }
+      
       if let error = error {
-        completion(nil, .FoundationError(error))
+        charities = nil
+        loadCharitiesError = .FoundationError(error)
         return
       }
       if let response = response as? NSHTTPURLResponse where !(200..<400 ~= response.statusCode) {
-        completion(nil, .HTTPError(response.statusCode))
+        loadCharitiesError = .HTTPError(response.statusCode)
+        charities = nil
         return
       }
       
       guard let data = returnedData else {
-        completion(nil, .InvalidResponse)
+        charities = nil
+        loadCharitiesError = .InvalidResponse
         return
       }
       
@@ -72,13 +84,15 @@ public class TamBoonAPI: NSObject {
           throw TamBoonAPIError.InvalidResponse
         }
       } catch {
-        completion(nil, .InvalidResponse)
+        charities = nil
+        loadCharitiesError = .InvalidResponse
         return
       }
       
-      let charities = json.flatMap(Charity.init)
-      completion(charities, nil)
+      charities = json.flatMap(Charity.init)
+      loadCharitiesError = nil
     })
+    
     loadCharitiesTask.resume()
   }
   
