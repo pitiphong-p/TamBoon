@@ -76,7 +76,7 @@ class CharityListTableViewController: UITableViewController {
   
   @IBAction func cancelDonation(sender: UIStoryboardSegue) {}
   @IBAction func donationFinished(sender: UIStoryboardSegue) {}
-  
+  @IBAction func readingAboutFinished(sender: UIStoryboardSegue) {}
 }
 
 
