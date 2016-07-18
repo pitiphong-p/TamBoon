@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0E03271D3CEE4200CE165C /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0E031D1D3CEA3400CE165C /* WebImage.framework */; };
+		8A0E032A1D3CEE5600CE165C /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0E031D1D3CEA3400CE165C /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A76AA631D3BF96900B78563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76AA621D3BF96900B78563 /* AppDelegate.swift */; };
 		8A76AA6A1D3BF96900B78563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA681D3BF96900B78563 /* Main.storyboard */; };
 		8A76AA6C1D3BF96900B78563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A76AA6B1D3BF96900B78563 /* Assets.xcassets */; };
@@ -20,6 +22,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8A0E03161D3CEA3400CE165C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53761325155AD0D5005750A4;
+			remoteInfo = SDWebImage;
+		};
+		8A0E03181D3CEA3400CE165C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 537D95C117ECC1FE0097C263;
+			remoteInfo = "SDWebImage+WebP";
+		};
+		8A0E031A1D3CEA3400CE165C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 531041E0157EAFA400BBABC3;
+			remoteInfo = "SDWebImage+MKAnnotation";
+		};
+		8A0E031C1D3CEA3400CE165C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4A2CADFF1AB4BB5300B6BC39;
+			remoteInfo = WebImage;
+		};
+		8A0E031E1D3CEA3400CE165C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 00733A4C1BC487C000A5A117;
+			remoteInfo = "WebImage tvOS";
+		};
+		8A0E03281D3CEE5000CE165C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A2CADFE1AB4BB5300B6BC39;
+			remoteInfo = WebImage;
+		};
 		8A0FCED71D3CA67F00481328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
@@ -57,6 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8A0E032A1D3CEE5600CE165C /* WebImage.framework in Embed Frameworks */,
 				8A76AA831D3BF97200B78563 /* TamBoonKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -65,6 +110,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = Library/SDWebImage/SDWebImage.xcodeproj; sourceTree = "<group>"; };
 		8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OmiseSDK.xcodeproj; path = Library/Omise/OmiseSDK.xcodeproj; sourceTree = "<group>"; };
 		8A76AA5F1D3BF96900B78563 /* TamBoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A76AA621D3BF96900B78563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0E03271D3CEE4200CE165C /* WebImage.framework in Frameworks */,
 				8A76AA821D3BF97200B78563 /* TamBoonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +146,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A0E030E1D3CEA3400CE165C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A0E03171D3CEA3400CE165C /* libSDWebImage.a */,
+				8A0E03191D3CEA3400CE165C /* libSDWebImage+WebP.a */,
+				8A0E031B1D3CEA3400CE165C /* libSDWebImage+MKAnnotation.a */,
+				8A0E031D1D3CEA3400CE165C /* WebImage.framework */,
+				8A0E031F1D3CEA3400CE165C /* WebImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8A0FCED21D3CA67F00481328 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +174,7 @@
 				8A76AA611D3BF96900B78563 /* TamBoon */,
 				8A76AA7C1D3BF97200B78563 /* TamBoonKit */,
 				8A76AA601D3BF96900B78563 /* Products */,
+				8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */,
 				8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -178,6 +238,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8A0E03291D3CEE5000CE165C /* PBXTargetDependency */,
 				8A76AA811D3BF97200B78563 /* PBXTargetDependency */,
 			);
 			name = TamBoon;
@@ -242,6 +303,10 @@
 					ProductGroup = 8A0FCED21D3CA67F00481328 /* Products */;
 					ProjectRef = 8A0FCED11D3CA67F00481328 /* OmiseSDK.xcodeproj */;
 				},
+				{
+					ProductGroup = 8A0E030E1D3CEA3400CE165C /* Products */;
+					ProjectRef = 8A0E030D1D3CEA3400CE165C /* SDWebImage.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -252,6 +317,41 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8A0E03171D3CEA3400CE165C /* libSDWebImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDWebImage.a;
+			remoteRef = 8A0E03161D3CEA3400CE165C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A0E03191D3CEA3400CE165C /* libSDWebImage+WebP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSDWebImage+WebP.a";
+			remoteRef = 8A0E03181D3CEA3400CE165C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A0E031B1D3CEA3400CE165C /* libSDWebImage+MKAnnotation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSDWebImage+MKAnnotation.a";
+			remoteRef = 8A0E031A1D3CEA3400CE165C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A0E031D1D3CEA3400CE165C /* WebImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WebImage.framework;
+			remoteRef = 8A0E031C1D3CEA3400CE165C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A0E031F1D3CEA3400CE165C /* WebImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WebImage.framework;
+			remoteRef = 8A0E031E1D3CEA3400CE165C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8A0FCED81D3CA67F00481328 /* OmiseSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -317,6 +417,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8A0E03291D3CEE5000CE165C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WebImage;
+			targetProxy = 8A0E03281D3CEE5000CE165C /* PBXContainerItemProxy */;
+		};
 		8A76AA811D3BF97200B78563 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8A76AA7A1D3BF97100B78563 /* TamBoonKit */;
