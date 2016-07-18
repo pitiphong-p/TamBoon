@@ -1,0 +1,3 @@
+[submodule "Library/Omise"]
+	path = Library/Omise
+	url = https://github.com/omise/omise-ios.git
