@@ -2,12 +2,12 @@
 
 import UIKit
 import TamBoonKit
-import PlaygroundSupport
+import XCPlayground
 
 
-PlaygroundPage.current.needsIndefiniteExecution = true
+XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
-let tamBoonAPI = TamBoonAPI(hostname: URL(string: "http://localhost:8080")!)
+let tamBoonAPI = TamBoonAPI(hostname: NSsURL(string: "http://localhost:8080")!)
 tamBoonAPI.listAllCharities { (charities, error) in
   print(error)
   print(charities)
