@@ -184,7 +184,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MX5-Xk-g3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ffL-vY-dBH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2695" y="1758"/>
+            <point key="canvasLocation" x="2975" y="1782"/>
         </scene>
         <!--License Viewer View Controller-->
         <scene sceneID="cBv-nF-sm1">
@@ -220,9 +220,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLR-gJ-yQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3434" y="1758"/>
+            <point key="canvasLocation" x="3714" y="1782"/>
         </scene>
-        <!--Donating View Controller-->
+        <!--Charity-->
         <scene sceneID="qtA-5x-aR9">
             <objects>
                 <viewController id="cSk-3r-Kvi" customClass="DonatingViewController" customModule="TamBoon" customModuleProvider="target" sceneMemberID="viewController">
@@ -271,10 +271,10 @@
                             <constraint firstItem="OLI-Uk-ImA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kk7-rX-Fa1" secondAttribute="leadingMargin" id="tks-nh-y5h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="deE-DD-MGH">
+                    <navigationItem key="navigationItem" title="Charity" id="deE-DD-MGH">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sz5-g1-izN">
                             <connections>
-                                <segue destination="PZB-Ik-Qaq" kind="unwind" unwindAction="cancelDonation:" id="EgG-IB-G9c"/>
+                                <segue destination="PZB-Ik-Qaq" kind="unwind" identifier="CancelDonation" unwindAction="cancelDonation:" id="EgG-IB-G9c"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ejL-gz-zFd">
@@ -288,7 +288,6 @@
                         <outlet property="charityNameLabel" destination="OLI-Uk-ImA" id="xN4-X2-i2V"/>
                         <outlet property="donateAmountTextField" destination="SPI-Fj-hVH" id="Q5y-f5-mPR"/>
                         <outlet property="nextStepBarButtonItem" destination="ejL-gz-zFd" id="K16-W1-BSq"/>
-                        <segue destination="QC0-de-vAa" kind="presentation" identifier="ShowSuccessfulSplash" id="kkH-GW-und"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBX-N3-iT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,7 +334,7 @@
         <!--Donation Splash View Controller-->
         <scene sceneID="04A-2c-BnP">
             <objects>
-                <viewController id="QC0-de-vAa" customClass="DonationSplashViewController" customModule="TamBoon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DonationSplashViewController" id="QC0-de-vAa" customClass="DonationSplashViewController" customModule="TamBoon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ymv-OP-sSn"/>
                         <viewControllerLayoutGuide type="bottom" id="IxC-E6-0bi"/>
@@ -375,7 +374,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ud8-VX-aFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qgD-aI-cLv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4037" y="1340"/>
+            <point key="canvasLocation" x="4493" y="600"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fdy-8W-it1">
@@ -393,7 +392,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCw-2J-y7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="1758"/>
+            <point key="canvasLocation" x="2163" y="1782"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

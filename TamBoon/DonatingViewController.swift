@@ -42,12 +42,6 @@ class DonatingViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "ShowSuccessfulSplash", let splashViewController = segue.destinationViewController as? DonationSplashViewController {
-      splashViewController.donatedCharity = charity
-    }
-  }
-  
   private func updateCharityUI() {
     guard isViewLoaded() else { return }
     
@@ -91,15 +85,32 @@ extension DonatingViewController: CreditCardFormDelegate {
     tamBoonAPI.donateToCharity(charity, withDonatorName: token.card?.name ?? "", payment: PaymentInformation(token: tokenID, amount: self.donatingAmount), completion: { (donatingError) in
       submitDonationProgressView.hideAnimated(true)
       if let error = donatingError {
-        print(error)
-      } else {
-        self.performSegueWithIdentifier("ShowSuccessfulSplash", sender: self)
+        // Display error message to user.
+        let errorMessage: String
+        switch error {
+        case .FoundationError(let error):
+          errorMessage = error.localizedDescription
+        case .HTTPError(_, message: let message?):
+          print(message)
+          fallthrough
+        default:
+          errorMessage = NSLocalizedString("donation.error.default-message", value: "An error occured.", comment: "A default error message")
+        }
+        
+        let displayingErrorMessageFormat = NSLocalizedString("donation.error.displaying-message", value: "%@ Please try again later and don't worry you have not been charged yet.", comment: "A default displaying error in alert")
+        let displayingMessage = String.localizedStringWithFormat(displayingErrorMessageFormat, errorMessage)
+        let errorAlertController = UIAlertController(title: nil, message: displayingMessage, preferredStyle: .Alert)
+        errorAlertController.addAction(UIAlertAction(title: NSLocalizedString("common.ok", value: "OK", comment: "A default OK title"), style: UIAlertActionStyle.Cancel, handler: nil))
+        controller.presentViewController(errorAlertController, animated: true, completion: nil)
+      } else if let donationSucceedSplashViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DonationSplashViewController") as? DonationSplashViewController {
+        donationSucceedSplashViewController.donatedCharity = self.charity
+        controller.presentViewController(donationSucceedSplashViewController, animated: true, completion: nil)
       }
     })
   }
   
   func creditCardForm(controller: CreditCardFormController, didFailWithError error: ErrorType) {
-    
+    // We choose to let CreditCardFormController handles error.
   }
 }
 
