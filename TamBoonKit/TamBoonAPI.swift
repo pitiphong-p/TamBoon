@@ -16,23 +16,38 @@ public struct PaymentInformation {
   public let amount: Int
 }
 
+/// The error information returned from TamBoon server
 public enum TamBoonAPIError: ErrorType {
+  /// An HTTP status error returned from the server
   case HTTPError(Int)
+  /// An Foundation error returned from the iOS
   case FoundationError(NSError)
+  /// An error indicated that server has returned an invalid or unknowned response data.
   case InvalidResponse
 }
 
 public class TamBoonAPI: NSObject {
+  /// Based host of the *TamBoon* server
   public let host: NSURL
   private var session: NSURLSession!
   private let processingQueue: NSOperationQueue = NSOperationQueue()
   
+  
+  /**
+   Create a new API instance with the given based host
+   - parameter host: Based host for the newly created API
+   */
   public init(host: NSURL) {
     self.host = host
     super.init()
     session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
   }
   
+  
+  /**
+   List all of the available charities that are able to be donated to.
+   - parameter completion: A completion callback closure with 2 parameters, the returned charities list or an error that occured.
+   */
   public func listAllCharitiesWithCompletion(completion: ([Charity]?, TamBoonAPIError?) -> Void) {
     let loadCharitiesTask = session.dataTaskWithURL(host, completionHandler: { (returnedData, response, error) in
       if let error = error {
@@ -66,6 +81,15 @@ public class TamBoonAPI: NSObject {
     })
     loadCharitiesTask.resume()
   }
+  
+  /**
+   Donate to a specified charity with given donator name and payment information.
+   - parameter charity: Charity that are going to be donated to.
+   - parameter donatorName: A Name of the donator.
+   - parameter payment: Donating payment information
+   - parameter completionQueue: A dispatch queue that the completion callback will be dispatched on. Default queue is `main` queue.
+   - parameter completion: A completion callback closure an occured error parameter. The error argument is nil if the donation operation is success.
+   */
   public func donateToCharity(charity: Charity, withDonatorName name: String,
                               payment: PaymentInformation,
                               completionQueue: dispatch_queue_t = dispatch_get_main_queue(),
