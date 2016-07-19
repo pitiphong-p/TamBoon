@@ -29,7 +29,7 @@ class DonatingViewController: UIViewController {
   
   var donatingAmount: Int = 0
   var isDonationValid: Bool {
-    return tamBoonAPI != nil && donatingAmount >= 2000
+    return tamBoonAPI != nil && donatingAmount >= 20
   }
   
   override func viewDidLoad() {
@@ -82,7 +82,7 @@ extension DonatingViewController: CreditCardFormDelegate {
     window.addSubview(submitDonationProgressView)
     submitDonationProgressView.showAnimated(true)
     
-    tamBoonAPI.donateToCharity(charity, withDonatorName: token.card?.name ?? "", payment: PaymentInformation(token: tokenID, amount: self.donatingAmount), completion: { (donatingError) in
+    tamBoonAPI.donateToCharity(charity, withDonatorName: token.card?.name ?? "", payment: PaymentInformation(token: tokenID, amount: self.donatingAmount * 100), completion: { (donatingError) in
       submitDonationProgressView.hideAnimated(true)
       if let error = donatingError {
         // Display error message to user.
