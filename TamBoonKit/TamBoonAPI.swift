@@ -36,7 +36,6 @@ public final class TamBoonAPI: NSObject {
   /// Based host of the *TamBoon* server
   public let host: NSURL
   private var session: NSURLSession!
-  private let processingQueue: NSOperationQueue = NSOperationQueue()
   
   
   /**
@@ -149,10 +148,5 @@ public final class TamBoonAPI: NSObject {
     
     donatingTask.resume()
   }
-}
-
-
-extension TamBoonAPI: NSURLSessionDelegate {
-  
 }
 
