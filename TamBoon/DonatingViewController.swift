@@ -40,6 +40,8 @@ class DonatingViewController: UIViewController {
     super.viewDidLoad()
     updateCharityUI()
     nextStepBarButtonItem?.enabled = tamBoonAPI != nil
+    
+    donateAmountTextField.becomeFirstResponder()
   }
   
   override func didReceiveMemoryWarning() {
