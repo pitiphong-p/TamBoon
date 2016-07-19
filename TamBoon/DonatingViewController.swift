@@ -19,7 +19,11 @@ class DonatingViewController: UIViewController {
       updateCharityUI()
     }
   }
-  var tamBoonAPI: TamBoonAPI?
+  var tamBoonAPI: TamBoonAPI? {
+    didSet {
+      nextStepBarButtonItem?.enabled = tamBoonAPI != nil
+    }
+  }
   
   @IBOutlet weak var charityLogoImageView: UIImageView!
   @IBOutlet weak var charityNameLabel: UILabel!
@@ -35,6 +39,7 @@ class DonatingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     updateCharityUI()
+    nextStepBarButtonItem?.enabled = tamBoonAPI != nil
   }
   
   override func didReceiveMemoryWarning() {
@@ -52,10 +57,14 @@ class DonatingViewController: UIViewController {
   }
   
   @IBAction func proceedNextStep(sender: UIBarButtonItem) {
-    let cardInputFormController = CreditCardFormController(publicKey: "pkey_test_54oojsyhv5uq1kzf4g4")
-    cardInputFormController.delegate = self
-    cardInputFormController.handleErrors = true
-    showViewController(cardInputFormController, sender: self)
+    if donatingAmount >= 20 {
+      let cardInputFormController = CreditCardFormController(publicKey: "pkey_test_54oojsyhv5uq1kzf4g4")
+      cardInputFormController.delegate = self
+      cardInputFormController.handleErrors = true
+      showViewController(cardInputFormController, sender: self)
+    } else {
+      
+    }
   }
   
   @IBAction func donateAmountDidChanged(sender: UITextField) {
@@ -100,7 +109,10 @@ extension DonatingViewController: CreditCardFormDelegate {
         let displayingErrorMessageFormat = NSLocalizedString("donation.error.displaying-message", value: "%@ Please try again later and don't worry you have not been charged yet.", comment: "A default displaying error in alert")
         let displayingMessage = String.localizedStringWithFormat(displayingErrorMessageFormat, errorMessage)
         let errorAlertController = UIAlertController(title: nil, message: displayingMessage, preferredStyle: .Alert)
-        errorAlertController.addAction(UIAlertAction(title: NSLocalizedString("common.ok", value: "OK", comment: "A default OK title"), style: UIAlertActionStyle.Cancel, handler: nil))
+        let okAction = UIAlertAction(title: NSLocalizedString("common.ok", value: "OK", comment: "A default OK title"), style: UIAlertActionStyle.Cancel, handler: { _ in
+          self.navigationController?.popToViewController(self, animated: true)
+        })
+        errorAlertController.addAction(okAction)
         controller.presentViewController(errorAlertController, animated: true, completion: nil)
       } else if let donationSucceedSplashViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DonationSplashViewController") as? DonationSplashViewController {
         donationSucceedSplashViewController.donatedCharity = self.charity

@@ -222,7 +222,7 @@
             </objects>
             <point key="canvasLocation" x="3714" y="1782"/>
         </scene>
-        <!--Charity-->
+        <!--Donate to a Charity-->
         <scene sceneID="qtA-5x-aR9">
             <objects>
                 <viewController id="cSk-3r-Kvi" customClass="DonatingViewController" customModule="TamBoon" customModuleProvider="target" sceneMemberID="viewController">
@@ -251,7 +251,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="donateAmountDidChanged:" destination="cSk-3r-Kvi" eventType="editingDidEnd" id="ddC-ce-RfV"/>
+                                    <action selector="donateAmountDidChanged:" destination="cSk-3r-Kvi" eventType="editingChanged" id="d3G-xY-zwM"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -271,7 +271,7 @@
                             <constraint firstItem="OLI-Uk-ImA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kk7-rX-Fa1" secondAttribute="leadingMargin" id="tks-nh-y5h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Charity" id="deE-DD-MGH">
+                    <navigationItem key="navigationItem" title="Donate to a Charity" id="deE-DD-MGH">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sz5-g1-izN">
                             <connections>
                                 <segue destination="PZB-Ik-Qaq" kind="unwind" identifier="CancelDonation" unwindAction="cancelDonation:" id="EgG-IB-G9c"/>
@@ -316,7 +316,7 @@
         <!--Navigation Controller-->
         <scene sceneID="mEk-K4-9Ph">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KPZ-9q-FSf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" id="KPZ-9q-FSf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vUT-aw-Ud5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
