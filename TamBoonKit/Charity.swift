@@ -26,3 +26,14 @@ extension Charity {
     self.logoURL = logoURLString.flatMap(NSURL.init(string:))
   }
 }
+
+
+public func ==(lhs: Charity, rhs: Charity) -> Bool {
+  return lhs.id == rhs.id
+}
+
+extension Charity: Hashable {
+  public var hashValue: Int {
+    return ~id.hashValue
+  }
+}

@@ -14,6 +14,4 @@ FOUNDATION_EXPORT double TamBoonKitVersionNumber;
 //! Project version string for TamBoonKit.
 FOUNDATION_EXPORT const unsigned char TamBoonKitVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <TamBoonKit/PublicHeader.h>
-
 
