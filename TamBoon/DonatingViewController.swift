@@ -63,7 +63,15 @@ class DonatingViewController: UIViewController {
       cardInputFormController.handleErrors = true
       showViewController(cardInputFormController, sender: self)
     } else {
-      
+      let insufficientDonationAmountTitle = NSLocalizedString("donation.insufficient-amount.title", value: "Insufficient amount", comment: "A title for insufficient donation amount error title")
+      let insufficientDonationAmountMessage = NSLocalizedString("donation.insufficient-amount.message", value: "You need to donate with the minimun donation amount of 20 baht", comment: "A title for insufficient donation amount error message")
+
+      let errorAlertController = UIAlertController(title: insufficientDonationAmountTitle, message: insufficientDonationAmountMessage, preferredStyle: .Alert)
+      let okAction = UIAlertAction(title: NSLocalizedString("common.ok", value: "OK", comment: "A default OK title"), style: UIAlertActionStyle.Cancel, handler: { _ in
+        self.donateAmountTextField.becomeFirstResponder()
+      })
+      errorAlertController.addAction(okAction)
+      presentViewController(errorAlertController, animated: true, completion: nil)
     }
   }
   
@@ -71,6 +79,14 @@ class DonatingViewController: UIViewController {
     guard let updatedText = sender.text, let amount = Int(updatedText) else { return }
     
     self.donatingAmount = amount
+  }
+}
+
+extension DonatingViewController: UITextFieldDelegate {
+  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    return string.isEmpty || string.utf16.reduce(true) { (currentResult, character) -> Bool in
+      return currentResult && NSCharacterSet.decimalDigitCharacterSet().characterIsMember(character)
+    }
   }
 }
 

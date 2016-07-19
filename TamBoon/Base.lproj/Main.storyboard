@@ -252,6 +252,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="donateAmountDidChanged:" destination="cSk-3r-Kvi" eventType="editingChanged" id="d3G-xY-zwM"/>
+                                    <outlet property="delegate" destination="cSk-3r-Kvi" id="e2m-bz-uzF"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -272,6 +273,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Donate to a Charity" id="deE-DD-MGH">
+                        <barButtonItem key="backBarButtonItem" title="Donate" id="nVE-Cp-hPk"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sz5-g1-izN">
                             <connections>
                                 <segue destination="PZB-Ik-Qaq" kind="unwind" identifier="CancelDonation" unwindAction="cancelDonation:" id="EgG-IB-G9c"/>
