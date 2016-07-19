@@ -44,6 +44,18 @@ class DonatingViewController: UIViewController {
     donateAmountTextField.becomeFirstResponder()
   }
   
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    donateAmountTextField.becomeFirstResponder()
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    donateAmountTextField.resignFirstResponder()
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
