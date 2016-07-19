@@ -32,7 +32,7 @@ public enum TamBoonAPIError: ErrorType {
   case InvalidResponse
 }
 
-public class TamBoonAPI: NSObject {
+public final class TamBoonAPI: NSObject {
   /// Based host of the *TamBoon* server
   public let host: NSURL
   private var session: NSURLSession!
