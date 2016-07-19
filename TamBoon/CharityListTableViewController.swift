@@ -14,6 +14,7 @@ import WebImage
 
 class CharityListTableViewController: UITableViewController {
   
+  @IBOutlet weak var refreshListControl: UIRefreshControl!
   var charities: [Charity] = [] {
     didSet {
       if isViewLoaded() {
@@ -23,13 +24,7 @@ class CharityListTableViewController: UITableViewController {
   }
   var tamBoonAPI: TamBoonAPI? {
     didSet {
-      tamBoonAPI?.listAllCharitiesWith(completion: { [weak self] (charities, error) in
-        guard let this = self else { return }
-        
-        if let charities = charities {
-          this.charities = charities
-        }
-        })
+      refreshCharitiesList()
     }
   }
   
@@ -73,6 +68,23 @@ class CharityListTableViewController: UITableViewController {
     return cell
   }
   
+  private func refreshCharitiesList() {
+    navigationItem.prompt = nil
+    tamBoonAPI?.listAllCharitiesWith(completion: { [weak self] (charities, error) in
+      guard let this = self else { return }
+      
+      this.refreshListControl.endRefreshing()
+      if let charities = charities {
+        this.charities = charities
+      } else if error != nil {
+         this.navigationItem.prompt = NSLocalizedString("charities-list.can't-load-charities.promt", value: "Can't load charities list, please try again later", comment: "A prompt displayed to user when cannot load the charities list from server")
+      }
+      })
+  }
+  
+  @IBAction func refreshCharitiesList(sender: UIRefreshControl) {
+    refreshCharitiesList()
+  }
   
   @IBAction func cancelDonation(sender: UIStoryboardSegue) {}
   @IBAction func donationFinished(sender: UIStoryboardSegue) {}
